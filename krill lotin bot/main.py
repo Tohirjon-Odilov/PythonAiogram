@@ -10,7 +10,7 @@ from aiogram.filters import CommandStart
 from aiogram.types import Message
 from translitirate import to_cyrillic, to_latin
 
-TOKEN = "6726534448:AAFZeQSAhl8vBlfE2dKdiN4dvEcPBaIa0QE"
+TOKEN = "6773130123:AAGpXgcjpkTaBBqNizL76b1IG0VhwO4sW0Y"
 
 dp = Dispatcher()
 
@@ -35,7 +35,7 @@ async def translit(message: types.Message):
  text = message.text
  response = to_cyrillic(text) if text.isascii() else to_latin(text)
  await message.answer(response)
- print(f"user -> \033[1;32;40m{message.from_user.full_name}\033[1;37;40m, sended message -> \033[1;31;40m{message.text}\033[1;37;40m")
+ print(f"user -> \033[1;32;40m{message.from_user.full_name}\033[1;37;0m, sended message -> \033[1;31;40m{message.text}\033[1;37;0m")
 
 async def main():
  bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
