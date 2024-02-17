@@ -35,7 +35,7 @@ async def translit(message: types.Message):
  text = message.text
  response = to_cyrillic(text) if text.isascii() else to_latin(text)
  await message.answer(response)
- print(f"user -> Fore.GREEN{message.from_user.full_name}Fore.RESET, sended message -> Fore.RED{message.text}Fore.RESET")
+ print(f"user -> \033[1;32;40m{message.from_user.full_name}\033[1;37;40m, sended message -> \033[1;31;40m{message.text}\033[1;37;40m")
 
 async def main():
  bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
